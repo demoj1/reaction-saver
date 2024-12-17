@@ -120,7 +120,7 @@ function generate_report() {
 
     rm -rf report
 
-    for base_path in `find .messages -regex "messages/$1/*/*/.*-reactions" | cut -f1 -d"\""`; do
+    for base_path in `find .messages -regex "\.messages/$1/*/*/.*-reactions" | cut -f1 -d"\""`; do
         creator=$(cat $base_path/creator)
         [ $? -ne 0 ] && continue
 

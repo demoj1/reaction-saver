@@ -3,11 +3,11 @@
 from pathlib import Path
 import collections
 
-if not Path("report").exists():
+if not Path(".report").exists():
   print("Empty reactions")
   exit(0)
 
-for username in Path("report").iterdir():
+for username in Path(".report").iterdir():
   reactions = (username / "reactions").read_text().split()
   stats = dict()
 
