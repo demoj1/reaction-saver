@@ -118,9 +118,9 @@ function handle_text_msg {
 function generate_report() {
     log "Start report generating..."
 
-    rm -rf report
+    rm -rf .report
 
-    for base_path in `find .messages -regex "\.messages/$1/*/*/.*-reactions" | cut -f1 -d"\""`; do
+    for base_path in `find .messages -regex "\.messages/$1/*/*/.*-reactions" | cut -f1 -d"\"" | sort | uniq`; do
         creator=$(cat $base_path/creator)
         [ $? -ne 0 ] && continue
 

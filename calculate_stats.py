@@ -16,6 +16,6 @@ for username in Path(".report").iterdir():
   if len(stats.keys()) == 0:
     continue
     
-  print(username.name.replace('"', ""), ":")
+  print("@" + username.name.replace('"', "") + ":")
   for k, v in stats.items():
     print("  ", k.replace('"', ''), " - ", v)
